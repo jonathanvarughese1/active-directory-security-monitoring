@@ -7,37 +7,37 @@ This project demonstrates Windows endpoint security monitoring in a virtualized 
 
 Lab Architecture
 
-Domain Controller: Windows Server 2022 (dc01)
+- Domain Controller: Windows Server 2022 (dc01)
 
-Active Directory Domain: corp.local
+- Active Directory Domain: corp.local
 
-Endpoint: Windows 11 Pro (WIN11CLIENT)
+- Endpoint: Windows 11 Pro (WIN11CLIENT)
 
-Endpoint Telemetry: Sysmon with a SwiftOnSecurity configuration
+- Endpoint Telemetry: Sysmon with a SwiftOnSecurity configuration
 
-Log Collection: Splunk Universal Forwarder
+- Log Collection: Splunk Universal Forwarder
 
-SIEM and Visualization: Splunk Enterprise
+- SIEM and Visualization: Splunk Enterprise
 
-Virtualization: Oracle VirtualBox
+- Virtualization: Oracle VirtualBox
 
 Implemented Features
 
-Configured a Windows Server Active Directory domain and Windows endpoint.
+- Configured a Windows Server Active Directory domain and Windows endpoint.
 
-Installed and configured Sysmon to collect endpoint telemetry.
+- Installed and configured Sysmon to collect endpoint telemetry.
 
-Forwarded Windows Application, System, Security, and Sysmon Operational logs to Splunk.
+- Forwarded Windows Application, System, Security, and Sysmon Operational logs to Splunk.
 
-Troubleshot Windows Event Log permissions to enable Sysmon log collection.
+- Troubleshot Windows Event Log permissions to enable Sysmon log collection.
 
-Used SPL and regular expressions to extract fields from raw Sysmon XML events.
+- Used SPL and regular expressions to extract fields from raw Sysmon XML events.
 
-Investigated process creation, executable paths, usernames, command lines, and parent processes.
+- Investigated process creation, executable paths, usernames, command lines, and parent processes.
 
-Developed a query to identify a specific net.exe command-line pattern associated with local security-group modifications.
+- Developed a query to identify a specific net.exe command-line pattern associated with local security-group modifications.
 
-Created a Splunk dashboard with event trends, process activity by user, frequently executed processes, and a potential security-group modification table.
+- Created a Splunk dashboard with event trends, process activity by user, frequently executed processes, and a potential security-group modification table.
 
 Detection Example
 
@@ -51,33 +51,33 @@ Screenshots of the Splunk dashboard and detection searches will be added here.
 
 Skills Demonstrated
 
-Windows Server and Active Directory
+- Windows Server and Active Directory
 
-Windows endpoint logging and Sysmon
+- Windows endpoint logging and Sysmon
 
-Splunk Enterprise and Universal Forwarder
+- Splunk Enterprise and Universal Forwarder
 
-Search Processing Language (SPL)
+- Search Processing Language (SPL)
 
-XML field extraction and regular expressions
+- XML field extraction and regular expressions
 
-Security event investigation
+- Security event investigation
 
-Detection logic development
+- Detection logic development
 
-SIEM dashboard creation
+- SIEM dashboard creation
 
-Troubleshooting Windows Event Log permissions
+- Troubleshooting Windows Event Log permissions
 
 Future Improvements
 
-Develop and validate additional detections for PowerShell, DNS, and network activity.
+- Develop and validate additional detections for PowerShell, DNS, and network activity.
 
-Improve field extraction and normalize event fields.
+- Improve field extraction and normalize event fields.
 
-Add investigation notes and examples of benign versus suspicious activity.
+- Add investigation notes and examples of benign versus suspicious activity.
 
-Expand the dashboard with additional security-focused views.
+- Expand the dashboard with additional security-focused views.
 
 Disclaimer
 
