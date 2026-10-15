@@ -1,11 +1,11 @@
-# active-directory-security-monitoring
+## active-directory-security-monitoring
 Active Directory security monitoring and threat detection using Sysmon and Splunk
 
-Overview
+## Overview
 
 This project demonstrates Windows endpoint security monitoring in a virtualized Active Directory lab. Sysmon collects endpoint telemetry, Splunk Universal Forwarder forwards Windows event logs, and Splunk Enterprise is used to search, investigate, and visualize security-related activity.
 
-Lab Architecture
+## Lab Architecture
 
 - Domain Controller: Windows Server 2022 (dc01)
 
@@ -21,7 +21,7 @@ Lab Architecture
 
 - Virtualization: Oracle VirtualBox
 
-Implemented Features
+## Implemented Features
 
 - Configured a Windows Server Active Directory domain and Windows endpoint.
 
@@ -39,17 +39,23 @@ Implemented Features
 
 - Created a Splunk dashboard with event trends, process activity by user, frequently executed processes, and a potential security-group modification table.
 
-Detection Example
+## Dashboard Preview
 
-A query identified a command that added the Splunk Forwarder service account to the local Event Log Readers group.
+![Splunk security monitoring dashboard](screenshots/dashboard-overview.png)
 
-This was an expected administrative change made during lab troubleshooting. The detection is based on a command-line pattern and does not independently confirm that a group membership change succeeded.
+## Detection Example
 
-Dashboard
+The following detection identifies a specific `net.exe` command-line pattern associated with a local security-group modification. The observed event was an expected administrative action during lab configuration.
 
-Screenshots of the Splunk dashboard and detection searches will be added here.
+![Security group modification detection](screenshots/security-group-detection.png)
 
-Skills Demonstrated
+## Sysmon Process Investigation
+
+This search extracts process execution details from Sysmon XML events, including the user, executable path, command line, and parent process.
+
+![Sysmon process investigation](screenshots/sysmon-process-investigation.png)
+
+## Skills Demonstrated
 
 - Windows Server and Active Directory
 
@@ -69,7 +75,7 @@ Skills Demonstrated
 
 - Troubleshooting Windows Event Log permissions
 
-Future Improvements
+## Future Improvements
 
 - Develop and validate additional detections for PowerShell, DNS, and network activity.
 
@@ -79,6 +85,6 @@ Future Improvements
 
 - Expand the dashboard with additional security-focused views.
 
-Disclaimer
+## Disclaimer
 
-This project is a personal learning lab using virtual machines and test data. Detection results require investigation and should not be treated as proof of malicious activity on their own.
+This project is a personal learning lab using virtual machines and test data. Detection results require investigation and should not be interpreted as definitive proof of malicious activity.
